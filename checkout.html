@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Checkout | DharniMart</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar market-topbar">
+    <a class="brand" href="/home">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <path d="M3 6h18"></path>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+      </span>
+      <span class="brand-name">DharniMart</span>
+    </a>
+    <nav class="market-nav">
+      <button type="button" class="nav-btn" id="homeNavBtn">Home</button>
+      <button type="button" class="nav-btn" id="cartNavBtn">
+        <span class="nav-icon">&#128722;</span> Cart
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button type="button" class="nav-btn" id="myOrdersNavBtn">My Orders</button>
+      <button type="button" class="nav-btn" id="logoutBtn">Logout</button>
+    </nav>
+  </header>
+
+  <main class="checkout-page">
+    <div class="checkout-head">
+      <h1>Checkout</h1>
+    </div>
+    <div class="checkout-grid">
+      <section class="checkout-form-card">
+        <h2>Customer Details</h2>
+        <div id="checkoutAlert" class="alert alert-error" role="alert"></div>
+        <form id="checkoutForm" novalidate>
+          <div class="form-group">
+            <label for="customerName">Customer Name</label>
+            <input type="text" id="customerName" placeholder="Enter your full name" />
+            <span class="field-error" id="customerNameError"></span>
+          </div>
+          <div class="form-group">
+            <label for="customerMobile">Mobile Number</label>
+            <input type="tel" id="customerMobile" placeholder="10-digit mobile number" maxlength="10" />
+            <span class="field-error" id="customerMobileError"></span>
+          </div>
+          <div class="form-group">
+            <label for="deliveryAddress">Delivery Address</label>
+            <textarea id="deliveryAddress" rows="4" placeholder="House number, street, area, city, pincode"></textarea>
+            <span class="field-error" id="deliveryAddressError"></span>
+          </div>
+        </form>
+      </section>
+      <aside class="checkout-summary-card">
+        <h2>Order Summary</h2>
+        <div class="summary-items" id="summaryItems">
+          <p class="summary-empty">Loading your cart...</p>
+        </div>
+        <div class="summary-total">
+          <span class="label">Total Amount</span>
+          <span class="total" id="summaryTotal">&#8377;0.00</span>
+        </div>
+        <button type="button" class="btn btn-primary" id="placeOrderBtn">Place Order</button>
+      </aside>
+    </div>
+  </main>
+
+  <footer class="footer-note">DharniMart &copy; 2026 &middot; ReuseHub</footer>
+
+  <script src="/js/checkout.js"></script>
+</body>
+</html>

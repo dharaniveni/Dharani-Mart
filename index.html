@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | DharniMart</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar">
+    <a class="brand" href="/">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <path d="M3 6h18"></path>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+      </span>
+      <span class="brand-name">DharniMart</span>
+    </a>
+  </header>
+
+  <main class="page">
+    <section class="card">
+      <h1 class="card-title">Welcome back to DharniMart</h1>
+      <p class="card-subtitle">Log in to your account to continue shopping and manage your orders.</p>
+
+      <div id="loginAlert" class="alert alert-error" role="alert"></div>
+
+      <form id="loginForm" novalidate>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" autocomplete="email" />
+          <span class="field-error" id="emailError"></span>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password</label>
+          <div class="control">
+            <input type="password" id="password" name="password" placeholder="Enter your password" autocomplete="current-password" />
+            <button type="button" class="toggle-password" id="togglePassword" aria-label="Show password">
+              <svg data-icon="eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                <circle cx="12" cy="12" r="3"></circle>
+              </svg>
+            </button>
+          </div>
+          <span class="field-error" id="passwordError"></span>
+        </div>
+
+        <div class="form-row">
+          <label class="checkbox">
+            <input type="checkbox" id="rememberMe" name="rememberMe" />
+            Remember Me
+          </label>
+          <a href="#" id="forgotLink">Forgot Password?</a>
+        </div>
+
+        <button type="submit" class="btn btn-primary" id="loginBtn">Login</button>
+      </form>
+
+      <div class="divider">New to DharniMart?</div>
+      <p class="switch-line">Don't have an account? <a href="/register">Create Account</a></p>
+    </section>
+  </main>
+
+  <div class="modal" id="forgotModal" role="dialog" aria-modal="true" aria-labelledby="forgotTitle">
+    <div class="modal-box">
+      <h3 id="forgotTitle">Reset your password</h3>
+      <p>Enter the email address linked to your DharniMart account and we will send password reset instructions to it.</p>
+      <div id="forgotAlert" class="alert alert-success" role="alert"></div>
+      <div class="form-group">
+        <label for="forgotEmail">Email Address</label>
+        <input type="email" id="forgotEmail" placeholder="you@example.com" />
+        <span class="field-error" id="forgotEmailError"></span>
+      </div>
+      <div class="modal-actions">
+        <button type="button" class="btn btn-ghost" id="forgotCancel">Cancel</button>
+        <button type="button" class="btn btn-primary" id="forgotSubmit">Send Reset Link</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-note">DharniMart &copy; 2026 &middot; ReuseHub</footer>
+
+  <script src="/js/login.js"></script>
+</body>
+</html>

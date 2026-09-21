@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Product Details | DharniMart</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar market-topbar">
+    <a class="brand" href="/home">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <path d="M3 6h18"></path>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+      </span>
+      <span class="brand-name">DharniMart</span>
+    </a>
+    <nav class="market-nav">
+      <button type="button" class="nav-btn" id="homeNavBtn">Home</button>
+      <button type="button" class="nav-btn" id="cartNavBtn">
+        <span class="nav-icon">&#128722;</span> Cart
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button type="button" class="nav-btn" id="myOrdersNavBtn">My Orders</button>
+      <button type="button" class="nav-btn" id="logoutBtn">Logout</button>
+    </nav>
+  </header>
+
+  <main class="product-details-page">
+    <section class="product-detail-card">
+      <div class="product-detail-img" id="detailImage"></div>
+      <div class="product-detail-info">
+        <span class="product-cat" id="detailCategory"></span>
+        <h1 id="detailName"></h1>
+        <p class="product-detail-desc" id="detailDesc"></p>
+        <div class="product-detail-price-row">
+          <span class="product-detail-price" id="detailPrice"></span>
+          <span class="product-detail-stock" id="detailStock"></span>
+        </div>
+        <button type="button" class="btn btn-primary" id="addToCartBtn">Add to Cart</button>
+      </div>
+    </section>
+
+    <section class="reviews-card">
+      <div class="reviews-head">
+        <h2>Reviews &amp; Ratings</h2>
+        <div class="reviews-summary">
+          <span class="avg" id="reviewsAvg">0.0</span>
+          <span id="reviewsStars"></span>
+          <span class="count" id="reviewsCount">0 reviews</span>
+        </div>
+      </div>
+
+      <div class="review-form">
+        <h3>Write a Review</h3>
+        <div id="reviewAlert" class="alert alert-error" role="alert"></div>
+        <form id="reviewForm" novalidate>
+          <div class="rating-select">
+            <span class="label">Your Rating</span>
+            <button type="button" class="star-btn" aria-label="1 star">&#9733;</button>
+            <button type="button" class="star-btn" aria-label="2 stars">&#9733;</button>
+            <button type="button" class="star-btn" aria-label="3 stars">&#9733;</button>
+            <button type="button" class="star-btn" aria-label="4 stars">&#9733;</button>
+            <button type="button" class="star-btn" aria-label="5 stars">&#9733;</button>
+            <span class="field-error" id="ratingError"></span>
+          </div>
+          <div class="form-group">
+            <label for="reviewText">Your Review</label>
+            <textarea id="reviewText" rows="3" placeholder="Share your experience with this product..."></textarea>
+            <span class="field-error" id="reviewError"></span>
+          </div>
+          <button type="submit" class="btn btn-primary" id="reviewSubmit">Submit Review</button>
+        </form>
+      </div>
+
+      <div class="review-list" id="reviewList">
+        <p class="reviews-empty">No reviews yet.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer-note">DharniMart &copy; 2026 &middot; ReuseHub</footer>
+
+  <script src="/js/product-details.js"></script>
+</body>
+</html>

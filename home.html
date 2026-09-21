@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Home | DharniMart</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar market-topbar">
+    <a class="brand" href="/home">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <path d="M3 6h18"></path>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+      </span>
+      <span class="brand-name">DharniMart</span>
+    </a>
+    <nav class="market-nav">
+      <button type="button" class="nav-btn" id="addProductNavBtn">
+        <span class="nav-icon">+</span> Add Product
+      </button>
+      <button type="button" class="nav-btn cart-btn" id="cartNavBtn">
+        <span class="nav-icon">&#128722;</span> Cart
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button type="button" class="nav-btn" id="myOrdersNavBtn">My Orders</button>
+      <button type="button" class="nav-btn" id="logoutBtn">Logout</button>
+    </nav>
+  </header>
+
+  <main class="market-main">
+    <section class="market-hero">
+      <h1>Welcome to DharniMart</h1>
+      <p class="home-user" id="homeUser"></p>
+      <button type="button" class="btn btn-primary" id="heroAddBtn">Add Product</button>
+    </section>
+
+    <section class="market-products">
+      <div class="products-head">
+        <h2>Products</h2>
+        <span class="products-count" id="productsCount">0 products</span>
+      </div>
+      <div class="products-tools">
+        <div class="search-box">
+          <input type="text" id="productSearch" placeholder="Search products..." aria-label="Search products" />
+        </div>
+        <div class="category-filter">
+          <select id="categoryFilter" aria-label="Filter by category">
+            <option value="">All Categories</option>
+            <option value="Home Grown Vegetables">Home Grown Vegetables</option>
+            <option value="Homemade Items">Homemade Items</option>
+            <option value="Old Books">Old Books</option>
+          </select>
+        </div>
+      </div>
+      <div class="product-grid" id="productGrid"></div>
+      <div class="empty-state" id="emptyState" hidden>
+        <p>No products added yet. Be the first to add one!</p>
+      </div>
+      <div class="empty-state" id="noResults" hidden>
+        <p>No products found.</p>
+      </div>
+    </section>
+  </main>
+
+  <div class="modal" id="addProductModal" role="dialog" aria-modal="true">
+    <div class="modal-box modal-wide">
+      <button type="button" class="modal-close" data-close="addProductModal">&times;</button>
+      <h3>Add Product</h3>
+      <div id="addProductAlert" class="alert alert-error" role="alert"></div>
+      <form id="addProductForm" novalidate>
+        <div class="form-group">
+          <label for="pName">Product Name</label>
+          <input type="text" id="pName" placeholder="e.g. Fresh Tomatoes (1 kg)" />
+          <span class="field-error" id="pNameError"></span>
+        </div>
+        <div class="form-group">
+          <label for="pImage">Product Image</label>
+          <input type="file" id="pImage" accept="image/*" />
+          <span class="hint">Optional. PNG, JPG, GIF or WEBP up to 5 MB.</span>
+          <span class="field-error" id="pImageError"></span>
+        </div>
+        <div class="form-group">
+          <label for="pCategory">Category</label>
+          <select id="pCategory">
+            <option value="">Select a category</option>
+            <option value="Home Grown Vegetables">Home Grown Vegetables</option>
+            <option value="Homemade Items">Homemade Items</option>
+            <option value="Old Books">Old Books</option>
+          </select>
+          <span class="field-error" id="pCategoryError"></span>
+        </div>
+        <div class="form-group">
+          <label for="pDescription">Description</label>
+          <textarea id="pDescription" rows="3" placeholder="Describe your product..."></textarea>
+          <span class="field-error" id="pDescriptionError"></span>
+        </div>
+        <div class="grid-two">
+          <div class="form-group">
+            <label for="pPrice">Price (&#8377;)</label>
+            <input type="number" id="pPrice" min="1" step="0.01" placeholder="e.g. 40" />
+            <span class="field-error" id="pPriceError"></span>
+          </div>
+          <div class="form-group">
+            <label for="pQuantity">Available Quantity</label>
+            <input type="number" id="pQuantity" min="0" step="1" placeholder="e.g. 10" />
+            <span class="field-error" id="pQuantityError"></span>
+          </div>
+        </div>
+        <div class="modal-actions">
+          <button type="button" class="btn btn-ghost" id="cancelAddBtn">Cancel</button>
+          <button type="submit" class="btn btn-primary" id="addProductBtn">Add Product</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal" id="successModal" role="dialog" aria-modal="true">
+    <div class="modal-box">
+      <div class="success-panel visible">
+        <div class="success-check">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 6 9 17l-5-5"></path>
+          </svg>
+        </div>
+        <h2>Product Added Successfully</h2>
+        <p id="successMessage">Your product has been added to DharniMart.</p>
+        <button type="button" class="btn btn-primary" id="successOkBtn">OK</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer-note">DharniMart &copy; 2026 &middot; ReuseHub</footer>
+
+  <script src="/js/home.js"></script>
+</body>
+</html>
