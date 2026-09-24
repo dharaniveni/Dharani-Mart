@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wishlist | DharniMart</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header class="topbar market-topbar">
+    <a class="brand" href="/home">
+      <span class="brand-mark">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+          <path d="M3 6h18"></path>
+          <path d="M16 10a4 4 0 0 1-8 0"></path>
+        </svg>
+      </span>
+      <span class="brand-name">DharniMart</span>
+    </a>
+    <nav class="market-nav">
+      <button type="button" class="nav-btn" id="homeNavBtn">Home</button>
+      <button type="button" class="nav-btn" id="cartNavBtn">
+        <span class="nav-icon">&#128722;</span> Cart
+        <span class="cart-count" id="cartCount">0</span>
+      </button>
+      <button type="button" class="nav-btn active" id="wishlistNavBtn">
+        <span class="nav-icon">&#9829;</span> Wishlist
+      </button>
+      <button type="button" class="nav-btn" id="myOrdersNavBtn">My Orders</button>
+      <button type="button" class="nav-btn" id="logoutBtn">Logout</button>
+    </nav>
+  </header>
+
+  <main class="wishlist-page">
+    <div class="wishlist-head">
+      <h1>My Wishlist</h1>
+      <span class="wishlist-count" id="wishlistCount">0 items</span>
+    </div>
+    <div class="product-grid" id="wishlistGrid"></div>
+    <div class="wishlist-empty" id="wishlistEmpty" hidden>
+      <p>Your wishlist is empty. Save products you love and find them here later.</p>
+      <button type="button" class="btn btn-primary" data-browse>Browse Products</button>
+    </div>
+  </main>
+
+  <footer class="footer-note">DharniMart &copy; 2026 &middot; ReuseHub</footer>
+
+  <script src="/js/wishlist.js"></script>
+</body>
+</html>
