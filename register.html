@@ -35,12 +35,24 @@
       </div>
 
       <div id="registerFormWrap">
-        <h1 class="card-title">Create your DharniMart account</h1>
-        <p class="card-subtitle">Join DharniMart to start buying and selling reusable products.</p>
+        <div class="role-tabs" role="group" aria-label="Choose account type">
+          <button type="button" class="role-tab" data-role="buyer" aria-selected="true">
+            <span class="role-tab-icon">&#128722;</span>
+            <span class="role-tab-label">Buyer Account</span>
+          </button>
+          <button type="button" class="role-tab" data-role="seller" aria-selected="false">
+            <span class="role-tab-icon">&#128230;</span>
+            <span class="role-tab-label">Seller Account</span>
+          </button>
+        </div>
+
+        <h1 class="card-title" id="roleRegisterTitle">Create your DharniMart account</h1>
+        <p class="card-subtitle" id="roleRegisterSubtitle">Join DharniMart to start buying reusable products from your community.</p>
 
         <div id="registerAlert" class="alert alert-error" role="alert"></div>
 
         <form id="registerForm" novalidate>
+          <input type="hidden" id="role" name="role" value="buyer" />
           <div class="form-group">
             <label for="fullName">Full Name</label>
             <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" autocomplete="name" />
