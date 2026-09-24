@@ -1,0 +1,56 @@
+[
+  {
+    "id": "2a0fa763-4b6a-4bd3-8cb7-e337a9b25c4f",
+    "userId": "7f22c294-4c2c-4ffd-83cf-eaf708389686",
+    "customerName": "Krishnaveni M",
+    "mobile": "9629544274",
+    "address": "5/28B Ovk Street Vadaseri, Karur.",
+    "items": [
+      {
+        "productId": "a6f82d88-ac8c-4f94-a955-8ceef12d9a51",
+        "name": "Millet Cookies",
+        "price": 180,
+        "image": "/uploads/e1b9af9a-6613-4a66-a6a3-8597b7eaf8e1.jpg",
+        "category": "Homemade Items",
+        "qty": 2
+      },
+      {
+        "productId": "e41e7894-cdd5-4894-a83a-87d67f95ae2e",
+        "name": "Mango Pickle",
+        "price": 150,
+        "image": "/uploads/8b40f6f0-84c0-4ddc-8f80-22119fe64411.jpg",
+        "category": "Homemade Items",
+        "qty": 1
+      },
+      {
+        "productId": "63bf1201-96fb-4df7-a90f-ee6985a66249",
+        "name": "Ragi Murukku",
+        "price": 120,
+        "image": "/uploads/c561c4c0-c9e0-4dae-95a3-1db5b3d2e6b0.jpg",
+        "category": "Homemade Items",
+        "qty": 1
+      }
+    ],
+    "total": 630,
+    "placedAt": "2026-09-20T14:29:20.892Z"
+  },
+  {
+    "id": "4adf74c7-76d8-46f1-924e-ccbdaa8565a5",
+    "userId": "7f22c294-4c2c-4ffd-83cf-eaf708389686",
+    "customerName": "Dharani M",
+    "mobile": "8807137363",
+    "address": "5/28B Ovk Street Vadaseri , Karur.",
+    "items": [
+      {
+        "productId": "6e3e16e6-9075-4608-9dbf-6da4414618e8",
+        "name": "Fresh Tomatoes 1kg",
+        "price": 50,
+        "image": "/uploads/5e603e2f-a272-4fc3-b8c4-0159191a4457.jpg",
+        "category": "Home Grown Vegetables",
+        "qty": 6
+      }
+    ],
+    "total": 300,
+    "placedAt": "2026-09-20T12:17:49.384Z"
+  }
+]
